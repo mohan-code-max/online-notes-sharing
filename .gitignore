@@ -1,0 +1,9 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Uploaded files (don’t push user uploads to GitHub)
+uploads/
+

@@ -1,0 +1,232 @@
+/* ================= General ================= */
+:root {
+  --primary: #0074d9;
+  --primary-dark: #005fa3;
+  --primary-darker: #004080;
+  --danger: #ff4d4d;
+  --danger-dark: #d93636;
+  --accent: #ff6600;
+  --bg-light: #f4f7fb;
+  --text-color: #222;
+  --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  --card-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg-light);
+  color: var(--text-color);
+}
+.hidden {
+  display: none;
+}
+button {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* ================= Authentication ================= */
+.auth-card,
+.upload-card {
+  max-width: 450px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  transition: 0.3s;
+}
+.auth-card:hover,
+.note-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+.auth-card h2,
+.upload-card h2 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+.auth-card input,
+.upload-card input,
+.upload-card textarea {
+  width: 90%;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+}
+.auth-card button,
+.upload-card button {
+  width: 95%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  margin-top: 0.7rem;
+}
+.auth-card button:hover,
+.upload-card button:hover {
+  background: var(--primary-dark);
+}
+#toggleAuth {
+  background: none;
+  border: none;
+  color: var(--primary);
+  text-decoration: underline;
+  margin-top: 1rem;
+}
+
+/* ================= Header ================= */
+header.main-header,
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  color: #fff;
+}
+header.main-header {
+  background: var(--primary);
+}
+header .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+header nav button {
+  background: var(--primary-dark);
+  border-radius: 6px;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  margin-left: 0.5rem;
+}
+header nav button.active,
+header nav button:hover {
+  background: var(--primary-darker);
+}
+.admin-header {
+  background: #151269;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.admin-header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+.admin-header button {
+  background: var(--accent);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+}
+.admin-header button:hover {
+  background: #e65c00;
+}
+
+/* ================= Notes Section ================= */
+.notes-card {
+  padding: 1.5rem 2rem;
+}
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.note-card {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.note-card h3 {
+  color: var(--primary);
+  margin-top: 0;
+}
+.note-card p {
+  margin: 0.5rem 0;
+}
+.note-card a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.note-card a:hover {
+  text-decoration: underline;
+}
+.note-card button {
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 0.8rem;
+  margin-top: 0.5rem;
+}
+.note-card button:hover {
+  background: var(--danger-dark);
+}
+
+/* ================= Upload Section ================= */
+.upload-card form input,
+.upload-card form textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+.upload-card form button {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  margin-top: 0.7rem;
+}
+.upload-card form button:hover {
+  background: var(--primary-dark);
+}
+
+/* ================= Search Bar ================= */
+.search-bar {
+  display: block;
+  margin: 1rem auto 2rem;
+  padding: 0.8rem 1rem;
+  width: 60%;
+  max-width: 400px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: 0.2s;
+}
+.search-bar:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 6px rgba(0, 116, 217, 0.3);
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  header.main-header,
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header nav {
+    margin-top: 0.5rem;
+  }
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
