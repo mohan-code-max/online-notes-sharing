@@ -1,0 +1,275 @@
+/* ================= Global ================= */
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --accent: #f97316;
+  --danger: #ef4444;
+  --danger-dark: #b91c1c;
+  --bg-light: #f9fafb;
+  --bg-dark: #111827;
+  --text-color: #1f2937;
+  --text-light: #6b7280;
+  --font: "Inter", "Segoe UI", sans-serif;
+  --radius: 14px;
+  --transition: 0.3s ease;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+/* ================= Utilities ================= */
+.hidden {
+  display: none;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* ================= Cards ================= */
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 1.8rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* ================= Authentication ================= */
+.auth-card {
+  max-width: 420px;
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.auth-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 0.9rem;
+  margin: 0.7rem 0;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.4);
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-card button:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+
+#toggleAuth {
+  margin-top: 1rem;
+  background: none;
+  color: var(--accent);
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-decoration: underline;
+}
+
+/* ================= Header ================= */
+header.main-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+header nav {
+  display: flex;
+  gap: 0.6rem;
+}
+
+header nav button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+header nav button.active,
+header nav button:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+/* ================= Notes ================= */
+.notes-card {
+  padding: 2rem;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.note-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.note-card:hover {
+  transform: translateY(-5px);
+}
+
+.note-card h3 {
+  color: var(--primary-dark);
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.note-card p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.note-card button {
+  padding: 0.5rem 1rem;
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.note-card button:hover {
+  background: var(--danger-dark);
+}
+
+/* ================= Search ================= */
+.search-bar {
+  display: block;
+  margin: 1.5rem auto 2rem;
+  padding: 0.9rem 1.2rem;
+  width: 70%;
+  max-width: 450px;
+  border-radius: 25px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  outline: none;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.search-bar:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(79,70,229,0.4);
+}
+
+/* ================= Upload ================= */
+.upload-card {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.upload-card input,
+.upload-card textarea {
+  width: 100%;
+  margin: 0.7rem 0;
+  padding: 0.9rem;
+  border-radius: var(--radius);
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+}
+
+.upload-card button {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.upload-card button:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  header.main-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav {
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar {
+    width: 90%;
+  }
+}

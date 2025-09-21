@@ -1,0 +1,180 @@
+/* ================= Reset & Base ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #f9fafb, #eef2ff);
+  color: #1f2937;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* ================= Header ================= */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #151269, #312e81);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.admin-header .logo {
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+}
+
+.admin-header button {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease-in-out;
+}
+
+.admin-header button:hover {
+  background: linear-gradient(135deg, #ea580c, #f97316);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(249, 115, 22, 0.4);
+}
+
+/* ================= Main ================= */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.admin-notes h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #151269;
+  border-left: 6px solid #f97316;
+  padding-left: 12px;
+}
+
+/* ================= Search ================= */
+.search-bar {
+  display: block;
+  margin: 1rem auto 2rem;
+  padding: 12px 18px;
+  width: 65%;
+  max-width: 420px;
+  border: 1px solid #d1d5db;
+  border-radius: 30px;
+  font-size: 1rem;
+  outline: none;
+  background: #fff url("https://cdn-icons-png.flaticon.com/512/622/622669.png")
+    no-repeat 15px center;
+  background-size: 18px;
+  padding-left: 45px;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.search-bar:focus {
+  border-color: #151269;
+  box-shadow: 0 0 10px rgba(21, 18, 105, 0.3);
+}
+
+/* ================= Notes Grid ================= */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.6rem;
+}
+
+/* ================= Note Cards ================= */
+.note-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.note-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.note-card h3 {
+  color: #151269;
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.note-card p {
+  margin: 0.4rem 0 0.8rem;
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.note-card a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.note-card a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Delete Button ---------- */
+.note-card button.delete-btn {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+
+.note-card button.delete-btn:hover {
+  background: linear-gradient(135deg, #b91c1c, #ef4444);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(239, 68, 68, 0.3);
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  .search-bar {
+    width: 85%;
+  }
+}

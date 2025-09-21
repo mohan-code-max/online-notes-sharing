@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes Sharing System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 🔹 Authentication Section -->
+    <section id="authSection" class="auth-card">
+      <h2 id="authTitle">Login</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <button id="authAction">Login</button>
+      <p id="authMsg"></p>
+      <button id="toggleAuth">Don't have an account? Register</button>
+      <button id="adminLoginToggle">Admin Login</button>
+    </section>
+
+    <!-- 🔹 Main Section (users only) -->
+    <section id="mainSection" style="display: none">
+      <header class="main-header">
+        <div class="logo">📘 NoteShare</div>
+        <nav>
+          <button id="notesBtn" class="active">Notes</button>
+          <button id="uploadBtn">Upload</button>
+          <button id="mynotesBtn">My Notes</button>
+          <button id="logoutBtn">Logout</button>
+        </nav>
+      </header>
+
+      <!-- Notes Section with Search -->
+      <section id="notesSection" class="notes-card">
+        <!-- 🔎 Search Bar -->
+        <input
+          type="text"
+          id="userSearchNotes"
+          placeholder="Search notes by title..."
+          class="search-bar"
+        />
+
+        <div id="notesGrid" class="notes-grid"></div>
+      </section>
+
+      <!-- Upload Section -->
+      <section id="uploadSection" class="upload-card hidden">
+        <form id="uploadForm">
+          <input type="text" name="title" placeholder="Title" required />
+          <textarea name="text" placeholder="Description"></textarea>
+          <input type="file" name="file" required />
+          <button type="submit">Upload</button>
+        </form>
+        <p id="uploadMsg"></p>
+      </section>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
